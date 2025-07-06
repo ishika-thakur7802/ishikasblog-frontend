@@ -13,7 +13,10 @@ function Home() {
 
     return (
         <main className="home">
-            <h1 className="page-title">🧠 Build and Break</h1>
+            <section className="hero">
+                <h1 className="page-title"> Build and Break</h1>
+                <p className="tagline">hi, I'm Ishika — I debug life and code one log at a time.</p>
+            </section>
             <h2 className="subtitle">Latest logs</h2>
             <div className="blog-grid">
                 {blogs.map(blog => (
