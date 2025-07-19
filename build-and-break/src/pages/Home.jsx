@@ -8,7 +8,7 @@ function Home() {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('https://your-backend.onrender.com/api/blogs')
+        fetch('https://ishikasblogg-production-efcd.up.railway.app/api/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data));
     }, []);
