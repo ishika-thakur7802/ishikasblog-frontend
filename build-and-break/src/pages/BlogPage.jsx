@@ -11,7 +11,7 @@ function BlogPage() {
     const [blog, setBlog] = useState(null);
 
     useEffect(() => {
-        fetch(`https://ishikasblogg-production-efcd.up.railway.app/api/blogs/${id}`)
+        fetch(`https://ishikasblogg-production-efcd.up.railway.app/api/blogs/${id}`) //backend-url/path-set-in-controller-backend
             .then(res => res.json())
             .then(data =>{
                 console.log(typeof data.content);
