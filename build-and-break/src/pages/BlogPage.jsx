@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
+import {createRoot} from 'react-dom/client'
+import Markdown from 'react-markdown'
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import './blog.css';
@@ -27,18 +28,12 @@ function BlogPage() {
         <article className="blog-post-container">
             <h1>{blog.title}</h1>
             <img src={blog.imageUrl} alt={blog.title} className="blog-img" />
-            const parsedContent = blog.content.replace(/\\n/g, '\n');
-            {blog?.content && (
-              <ReactMarkdown
-                className="blog-markdown"
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeRaw]}
-              >
-                console.log("Snippet:", blog.content.slice(0, 50));
 
-                {blog.content}
-              </ReactMarkdown>
-            )}
+             createRoot(document.body).render(
+               <Markdown remarkPlugins={[remarkGfm][rehypeRaw]}>{blog.content}</Markdown>
+
+            )
+
 
 
         </article>
